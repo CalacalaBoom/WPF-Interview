@@ -1,0 +1,15 @@
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\One\bin\Debug\net8.0\One.exe
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\One\bin\Debug\net8.0\One.deps.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\One\bin\Debug\net8.0\One.runtimeconfig.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\One\bin\Debug\net8.0\One.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\One\bin\Debug\net8.0\One.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\One\obj\Debug\net8.0\One.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\One\obj\Debug\net8.0\One.AssemblyInfoInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\One\obj\Debug\net8.0\One.AssemblyInfo.cs
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\One\obj\Debug\net8.0\One.csproj.CoreCompileInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\One\obj\Debug\net8.0\One.sourcelink.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\One\obj\Debug\net8.0\One.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\One\obj\Debug\net8.0\refint\One.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\One\obj\Debug\net8.0\One.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\One\obj\Debug\net8.0\One.genruntimeconfig.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\One\obj\Debug\net8.0\ref\One.dll

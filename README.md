@@ -40,6 +40,8 @@
 - [40. 随便讲对垃圾回收的理解](#40-随便讲对垃圾回收的理解)
 - [41. WPF有哪些缺点](#41-wpf有哪些缺点)
 - [42. 详说堆和栈的区别](#42-详说堆和栈的区别)
+- [43. WPF消息队列的原理](#43-WPF消息队列的原理)
+- [44. Dispatcher的Invoke和BeginInvoke的区别,他们的返回值是什么,有什么重载,不同事件有什么优先级](#44-Dispatcher的Invoke和BeginInvoke的区别，他们的返回值是什么，有什么重载，不同事件有什么优先级)
 
 
 # 1. 多个线程之间如何传递数据
@@ -2842,6 +2844,88 @@ private static void OnMyPropertyChanged(DependencyObject d, DependencyPropertyCh
 }
 ```
 
+### 4.WPF中依赖属性是什么 跟普通属性的区别 你怎么实现绑定 验证的原理依赖属性怎么存的 为什么这么存
+在 WPF（Windows Presentation Foundation）中，**依赖属性（Dependency Property）** 是一种增强的属性机制，它与普通属性的主要区别在于依赖属性支持更强大的功能，如数据绑定、样式、动画、模板和属性值继承等。
+
+#### 1. **依赖属性与普通属性的区别**
+   - **普通属性（CLR属性）**：
+     - 通常通过字段存储属性值。
+     - 无法自动支持数据绑定、样式、动画等功能。
+   - **依赖属性**：
+     - 通过 WPF 的 `DependencyProperty` 系统实现，使用 `DependencyProperty.Register()` 注册。
+     - 属性值的存储和管理通过 WPF 的依赖属性系统，而不是直接通过字段存储。这使得依赖属性可以支持以下特性：
+       - **数据绑定**：允许将 UI 属性绑定到数据源，并自动更新。
+       - **样式和模板**：支持通过样式设置属性的默认值。
+       - **动画**：可以通过动画逐步改变属性的值。
+       - **属性值继承**：在控件树中，子元素可以继承父元素的依赖属性值。
+
+#### 2. **依赖属性的实现**
+   要定义依赖属性，需要使用 `DependencyProperty` 注册它。通常这样做：
+
+   ```csharp
+   public class MyControl : Control
+   {
+       // 注册依赖属性
+       public static readonly DependencyProperty MyPropertyProperty =
+           DependencyProperty.Register(
+               "MyProperty",                // 属性名
+               typeof(int),                  // 属性类型
+               typeof(MyControl),            // 拥有该属性的类
+               new PropertyMetadata(0));     // 属性默认值
+
+       // CLR包装器
+       public int MyProperty
+       {
+           get { return (int)GetValue(MyPropertyProperty); }
+           set { SetValue(MyPropertyProperty, value); }
+       }
+   }
+   ```
+
+   - `DependencyProperty.Register` 方法将依赖属性注册到 WPF 的依赖属性系统中。
+   - `GetValue` 和 `SetValue` 用于获取和设置依赖属性的值，而不是直接通过字段来存储和访问值。
+
+#### 3. **绑定的实现**
+   依赖属性与数据绑定系统紧密集成。在 WPF 中，绑定通常是这样实现的：
+
+   ```xaml
+   <TextBox Text="{Binding Path=MyProperty, Mode=TwoWay}" />
+   ```
+
+   - 通过 `Binding` 标记扩展，`MyProperty` 属性可以绑定到数据上下文中。
+   - 依赖属性的设计使得属性值的更改能够自动触发数据绑定的更新和 UI 的重绘。
+
+#### 4. **验证的原理**
+   WPF 通过 `ValidationRules` 和 `IDataErrorInfo` 或 `INotifyDataErrorInfo` 来实现数据验证。绑定过程中可以设置验证规则：
+
+   ```xaml
+   <TextBox>
+       <TextBox.Text>
+           <Binding Path="MyProperty" UpdateSourceTrigger="PropertyChanged">
+               <Binding.ValidationRules>
+                   <local:MyValidationRule />
+               </Binding.ValidationRules>
+           </Binding>
+       </TextBox.Text>
+   </TextBox>
+   ```
+
+   验证的机制是当绑定源的数据发生更改时，验证规则会被自动调用，并决定数据是否有效。
+
+#### 5. **依赖属性是如何存储的**
+   依赖属性的值存储在 WPF 的内部**属性系统**中，而不是通过普通字段。WPF 为每个依赖属性维护一个值表，当属性值改变时，WPF 的系统会更新相应的存储。这种存储机制带来了以下好处：
+   - **内存效率**：依赖属性的值并不会为每个对象实例都占用空间，只有在值与默认值不同时才会存储。
+   - **共享机制**：多个对象可以共享相同的依赖属性元数据，如默认值、回调函数等。
+
+#### 6. **为什么依赖属性这么存**
+   依赖属性的这种存储方式带来了几个关键好处：
+   - **高效的内存使用**：只为那些需要非默认值的对象存储属性值，避免了每个对象都存储大量属性值的开销。
+   - **支持多个来源的属性值**：依赖属性系统可以管理样式、模板、绑定、动画等不同来源的值，通过优先级机制确定最终值。
+   - **支持属性的变化通知**：依赖属性系统自动支持属性更改通知，使得绑定和 UI 响应属性变化更加高效和自动化。
+
+通过这种机制，WPF 的依赖属性系统比普通的 CLR 属性更灵活且功能强大。
+
+
 # 40. 随便讲对垃圾回收的理解
 **垃圾回收**（Garbage Collection, GC）是 .NET 运行时的一项自动内存管理机制，负责回收不再被使用的对象，以释放内存并提高程序的性能和稳定性。
 
@@ -2938,3 +3022,197 @@ WPF（Windows Presentation Foundation）是一个功能强大的 UI 框架，但
 #### **缺点**
 - **大小限制**：栈的大小通常是有限的，过多的局部变量或深度递归可能导致栈溢出（Stack Overflow）。
 - **灵活性差**：栈内存的大小在编译时确定，不能动态分配，适合固定大小的数据。
+
+# 43.WPF消息队列的原理
+WPF 的消息队列（Message Queue）机制基于 Windows 消息循环（Message Loop），是 Windows 消息处理机制的封装和扩展。消息队列在 WPF 应用程序中用于管理事件、输入、渲染和其他异步操作的调度，以确保所有这些操作能够顺序执行，并且不阻塞 UI 线程。
+
+## 1. **消息队列的概念**
+   - WPF 使用一个**消息队列**来管理来自用户（如鼠标和键盘）、系统（如窗口大小调整）和应用程序内部的事件（如数据绑定、动画等）。
+   - 这些消息通过一个消息循环（Message Loop）不断被**调度**并传递给合适的处理程序。
+   - 消息队列的核心目的是确保 WPF 的**单线程模型**。WPF 的 UI 线程是一个 STA（单线程单元，Single Threaded Apartment），所有 UI 操作必须在主线程中执行，消息队列帮助确保异步消息有序、正确地在主线程上执行。
+
+## 2. **消息队列的工作原理**
+   - **Windows 消息循环**：WPF 基于 Windows 消息循环机制，使用 `Dispatcher` 和 `DispatcherObject` 实现异步消息处理。每个 WPF 应用程序都有一个 `Dispatcher` 对象，它与 UI 线程关联。
+   - **消息调度**：消息队列中的消息由 `Dispatcher` 调度。当 WPF 应用程序启动时，`Dispatcher` 会启动并进入一个消息循环，不断从消息队列中取出消息并进行处理。
+   - **优先级机制**：WPF 消息队列中的消息根据优先级进行处理。`Dispatcher` 定义了多个优先级，如：
+     - `ApplicationIdle`
+     - `Input`
+     - `Render`
+     - `Normal`
+     - `Background`
+     - `Send`
+
+     这些优先级确保重要的任务（如输入和渲染）先于低优先级的任务（如后台数据处理）被执行。
+
+## 3. **消息的调度过程**
+   - **DispatcherTimer 和 UI 操作**：WPF 使用 `DispatcherTimer` 来管理 UI 的刷新和定时任务。用户输入（如键盘和鼠标事件）会通过消息队列发送到 `Dispatcher`，然后 `Dispatcher` 将这些消息交给相应的控件处理。
+   - **异步操作的执行**：对于长时间运行的操作或需要异步处理的任务，WPF 通过 `Dispatcher.BeginInvoke` 和 `Dispatcher.InvokeAsync` 将这些任务排入消息队列中等待调度。
+
+   例如，在 WPF 中，你可以使用 `Dispatcher` 进行异步更新 UI：
+   ```csharp
+   Dispatcher.BeginInvoke(new Action(() => {
+       // 更新 UI 组件
+       MyTextBox.Text = "Updated asynchronously";
+   }), DispatcherPriority.Background);
+   ```
+
+   这个操作会将更新 UI 的任务放入消息队列中，确保它在合适的时机被调度并执行。
+
+## 4. **Dispatcher 的工作原理**
+   - **单线程 UI 模型**：WPF 是单线程 UI 模型，UI 控件必须在创建它们的线程（通常是主线程）上访问。`Dispatcher` 是管理此线程消息的关键组件，它将任务分派给 UI 线程。
+   - **队列与优先级**：`Dispatcher` 持有一个内部队列，其中保存了待处理的消息，每个消息都有其优先级。高优先级消息（如输入事件）会优先处理，确保用户的操作有较高响应速度，而较低优先级的消息（如后台任务）则会在系统空闲时处理。
+   
+   WPF 的消息队列会处理以下几类消息：
+   - **输入事件**：如鼠标点击、键盘输入等。
+   - **渲染事件**：如控件的重绘和更新。
+   - **定时器事件**：如通过 `DispatcherTimer` 实现的周期性任务。
+   - **动画和绑定**：动画帧的更新、数据绑定的刷新等。
+   - **异步操作**：如通过 `BeginInvoke` 调度的后台任务。
+
+## 5. **消息队列与 UI 性能**
+   - WPF 的消息队列机制确保了输入响应、界面渲染和后台任务的有效协调。然而，如果某个操作耗时过长且在主线程中执行，会导致消息队列阻塞，进而造成 UI 界面的卡顿。为了避免这种情况，可以将耗时操作放到后台线程处理，而不是在主线程中执行。
+   - 可以使用 `Task.Run()` 或者 `BackgroundWorker` 来在后台执行任务，避免阻塞主线程。
+
+## 6. **消息队列优化的关键点**
+   - **避免阻塞 UI 线程**：将耗时操作（如文件读取、网络请求）移到后台线程，通过 `Dispatcher` 将结果回传给 UI 线程。
+   - **合理设置优先级**：在更新 UI 时，使用合适的 `DispatcherPriority`，如使用 `DispatcherPriority.Render` 确保渲染优先于其他较低优先级的任务。
+   - **控制异步调用频率**：避免频繁的异步调用导致消息队列中的任务积压，造成性能问题。
+
+## 7. **DispatcherFrame 与消息循环控制**
+   WPF 中可以通过 `DispatcherFrame` 来控制消息循环。例如，可以暂停或继续消息循环，适用于一些特殊场景，如调试或暂停应用：
+
+   ```csharp
+   DispatcherFrame frame = new DispatcherFrame();
+   Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() =>
+   {
+       frame.Continue = false;  // 退出消息循环
+   }));
+   Dispatcher.PushFrame(frame);
+   ```
+
+   这个代码块实现了手动控制消息队列的循环行为，通常用于高级调度控制。
+
+# 44.Dispatcher的Invoke和BeginInvoke的区别，他们的返回值是什么，有什么重载，不同事件有什么优先级
+
+`Dispatcher` 的 `Invoke` 和 `BeginInvoke` 方法是 WPF 中用于调度操作到 UI 线程的两个常用方法。它们的主要区别在于执行方式和同步/异步的特性。
+
+### 1. **`Invoke` 和 `BeginInvoke` 的区别**
+
+- **`Invoke`**：
+  - **同步**调用：`Invoke` 会阻塞调用线程，直到指定的操作在 UI 线程执行完毕。也就是说，调用 `Invoke` 的线程会等待，直到调度的操作完成之后再继续执行。
+  - **用法**：适用于需要立即在 UI 线程上执行某些操作，并且调用线程必须等到该操作完成后再继续执行的场景。
+
+  ```csharp
+  Dispatcher.Invoke(() =>
+  {
+      // 立即在 UI 线程上执行的操作
+      MyTextBox.Text = "Updated synchronously";
+  }, DispatcherPriority.Normal);
+  ```
+
+- **`BeginInvoke`**：
+  - **异步**调用：`BeginInvoke` 是异步的，它不会阻塞调用线程。调用后立即返回，并将操作调度到 UI 线程上执行。调用线程无需等待操作完成，可以继续执行其他操作。
+  - **用法**：适用于不需要等待 UI 操作完成，调度操作可以异步进行的场景。
+
+  ```csharp
+  Dispatcher.BeginInvoke(() =>
+  {
+      // 异步调度的操作，不阻塞当前线程
+      MyTextBox.Text = "Updated asynchronously";
+  }, DispatcherPriority.Background);
+  ```
+
+### 2. **返回值**
+
+- **`Invoke` 的返回值**：
+  - `Invoke` 方法根据你调用的委托的返回类型返回相应的结果。如果调用的委托有返回值，`Invoke` 会等待该操作执行完毕，并返回其结果。如果委托没有返回值（`Action` 类型），那么 `Invoke` 将返回 `null`。
+
+  ```csharp
+  int result = Dispatcher.Invoke(() => {
+      return 42;  // 执行的结果为42
+  });
+  // result 值为 42
+  ```
+
+- **`BeginInvoke` 的返回值**：
+  - `BeginInvoke` 返回一个 `DispatcherOperation` 对象。这个对象代表异步操作的执行状态，通过它可以：
+    - 检查异步操作是否完成。
+    - 取消该操作。
+    - 获取异步操作的执行结果（如果有返回值）。
+
+  ```csharp
+  DispatcherOperation operation = Dispatcher.BeginInvoke(() => {
+      return 42;  // 异步操作
+  });
+
+  // 可以通过 DispatcherOperation 的 Task 属性获取返回值
+  operation.Completed += (sender, e) =>
+  {
+      var result = operation.Result;  // 获取异步操作的返回值
+      Console.WriteLine(result);      // 输出 42
+  };
+  ```
+
+### 3. **重载**
+
+- **`Invoke` 重载**：
+  - `Invoke` 方法有多个重载，支持不同的委托类型、调度优先级和超时设置。常见的重载形式包括：
+    - `Invoke(Action callback)`：在 UI 线程同步执行 `Action`。
+    - `Invoke(Delegate method, DispatcherPriority priority)`：指定优先级同步执行委托。
+    - `Invoke(Delegate method, DispatcherPriority priority, TimeSpan timeout)`：指定优先级和超时时间同步执行委托。
+
+  ```csharp
+  Dispatcher.Invoke(() => {
+      // 更新 UI
+      MyTextBox.Text = "Updated with priority";
+  }, DispatcherPriority.Normal);  // 使用指定优先级
+  ```
+
+- **`BeginInvoke` 重载**：
+  - `BeginInvoke` 也有多个重载，支持不同的委托类型、调度优先级和参数。
+    - `BeginInvoke(Action callback)`：异步执行 `Action`。
+    - `BeginInvoke(Delegate method, DispatcherPriority priority)`：指定优先级异步执行委托。
+    - `BeginInvoke(Delegate method, DispatcherPriority priority, object args)`：异步执行带有参数的委托。
+
+  ```csharp
+  Dispatcher.BeginInvoke(() => {
+      // 异步更新 UI
+      MyTextBox.Text = "Updated asynchronously with priority";
+  }, DispatcherPriority.Background);
+  ```
+
+### 4. **不同事件的优先级**
+
+WPF 的 `Dispatcher` 系统使用了**优先级调度**机制，每个调度的任务都有一个优先级。优先级决定了任务在消息队列中的处理顺序。`DispatcherPriority` 枚举中定义了多个优先级，从高到低如下：
+
+- **`Send`**：最高优先级，立即执行调度操作，阻塞其他操作。
+- **`Normal`**：默认优先级，一般用于标准操作。
+- **`Input`**：处理用户输入相关的操作（如键盘和鼠标事件）。
+- **`Render`**：用于处理渲染操作，确保 UI 绘制正常。
+- **`Loaded`**：用于控件加载后的操作。
+- **`Background`**：优先级较低，用于不紧急的后台任务。
+- **`ApplicationIdle`**：当应用程序处于空闲状态时执行的操作。
+- **`ContextIdle`**：当任务上下文为空闲时执行的操作。
+- **`SystemIdle`**：系统完全空闲时执行的操作。
+
+当多个任务被调度时，WPF 的 `Dispatcher` 会根据任务的优先级从高到低执行。例如，用户输入操作（`Input`）和界面渲染（`Render`）会优先于后台任务（`Background`）执行。
+
+```csharp
+Dispatcher.BeginInvoke(() => {
+    // 高优先级输入事件
+}, DispatcherPriority.Input);
+
+Dispatcher.BeginInvoke(() => {
+    // 低优先级后台操作
+}, DispatcherPriority.Background);
+```
+
+通过这种优先级机制，WPF 确保重要的操作（如输入和渲染）能够及时处理，而低优先级任务（如后台计算）在系统空闲时进行，保持应用程序的流畅性和响应性。
+
+### 总结
+
+- **`Invoke`** 是同步调用，阻塞当前线程，等待 UI 操作完成。
+- **`BeginInvoke`** 是异步调用，立即返回并调度操作到 UI 线程，不会阻塞调用线程。
+- `Invoke` 返回委托的执行结果，而 `BeginInvoke` 返回一个 `DispatcherOperation` 对象。
+- 两者都有多种重载，支持指定优先级和超时时间。
+- 不同任务的优先级决定了它们在消息队列中的执行顺序，确保输入、渲染等关键任务优先执行。

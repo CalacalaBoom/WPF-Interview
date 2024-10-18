@@ -1,0 +1,22 @@
+﻿<Window x:Class="BingdingWPF.VisualAndLogivalTreeSample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BingdingWPF"
+        mc:Ignorable="d"
+        Title="VisualAndLogivalTreeSample"
+        Height="450"
+        Width="800">
+    <StackPanel>
+        <Button Content="按钮1"
+                x:Name="btn1"
+                Click="btn1_Click"/>
+        <Button Content="按钮2"
+                x:Name="btn2" />
+        <Button Content="按钮3"
+                x:Name="btn3" />
+        <Button Content="按钮4"
+                x:Name="btn4" />
+    </StackPanel>
+</Window>

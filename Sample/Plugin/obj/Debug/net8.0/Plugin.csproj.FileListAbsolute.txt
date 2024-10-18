@@ -1,0 +1,12 @@
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Plugin\bin\Debug\net8.0\Plugin.deps.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Plugin\bin\Debug\net8.0\Plugin.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Plugin\bin\Debug\net8.0\Plugin.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Plugin\obj\Debug\net8.0\Plugin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Plugin\obj\Debug\net8.0\Plugin.AssemblyInfoInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Plugin\obj\Debug\net8.0\Plugin.AssemblyInfo.cs
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Plugin\obj\Debug\net8.0\Plugin.csproj.CoreCompileInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Plugin\obj\Debug\net8.0\Plugin.sourcelink.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Plugin\obj\Debug\net8.0\Plugin.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Plugin\obj\Debug\net8.0\refint\Plugin.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Plugin\obj\Debug\net8.0\Plugin.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Plugin\obj\Debug\net8.0\ref\Plugin.dll

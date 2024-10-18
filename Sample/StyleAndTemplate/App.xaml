@@ -1,0 +1,22 @@
+﻿<Application x:Class="StyleAndTemplate.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:StyleAndTemplate"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="Background"
+                    Value="AliceBlue" />
+        </Style>
+
+        <Style x:Key="YellowGrid"
+               TargetType="Grid"
+               BasedOn="{StaticResource {x:Type Grid}}">
+            <Setter Property="Background"
+                    Value="Yellow" />
+        </Style>
+
+        <SolidColorBrush x:Key="MyButtonBrush"
+                         Color="Red" />
+    </Application.Resources>
+</Application>

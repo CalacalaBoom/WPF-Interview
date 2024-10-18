@@ -1,0 +1,15 @@
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Seven\bin\Debug\net8.0\Seven.exe
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Seven\bin\Debug\net8.0\Seven.deps.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Seven\bin\Debug\net8.0\Seven.runtimeconfig.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Seven\bin\Debug\net8.0\Seven.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Seven\bin\Debug\net8.0\Seven.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Seven\obj\Debug\net8.0\Seven.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Seven\obj\Debug\net8.0\Seven.AssemblyInfoInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Seven\obj\Debug\net8.0\Seven.AssemblyInfo.cs
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Seven\obj\Debug\net8.0\Seven.csproj.CoreCompileInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Seven\obj\Debug\net8.0\Seven.sourcelink.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Seven\obj\Debug\net8.0\Seven.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Seven\obj\Debug\net8.0\refint\Seven.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Seven\obj\Debug\net8.0\Seven.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Seven\obj\Debug\net8.0\Seven.genruntimeconfig.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Seven\obj\Debug\net8.0\ref\Seven.dll

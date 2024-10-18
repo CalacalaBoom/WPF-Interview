@@ -1,0 +1,15 @@
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\跨进程同步\bin\Debug\net8.0\跨进程同步.exe
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\跨进程同步\bin\Debug\net8.0\跨进程同步.deps.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\跨进程同步\bin\Debug\net8.0\跨进程同步.runtimeconfig.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\跨进程同步\bin\Debug\net8.0\跨进程同步.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\跨进程同步\bin\Debug\net8.0\跨进程同步.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\跨进程同步\obj\Debug\net8.0\跨进程同步.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\跨进程同步\obj\Debug\net8.0\跨进程同步.AssemblyInfoInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\跨进程同步\obj\Debug\net8.0\跨进程同步.AssemblyInfo.cs
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\跨进程同步\obj\Debug\net8.0\跨进程同步.csproj.CoreCompileInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\跨进程同步\obj\Debug\net8.0\跨进程同步.sourcelink.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\跨进程同步\obj\Debug\net8.0\跨进程同步.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\跨进程同步\obj\Debug\net8.0\refint\跨进程同步.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\跨进程同步\obj\Debug\net8.0\跨进程同步.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\跨进程同步\obj\Debug\net8.0\跨进程同步.genruntimeconfig.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\跨进程同步\obj\Debug\net8.0\ref\跨进程同步.dll

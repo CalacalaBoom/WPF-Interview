@@ -1,0 +1,15 @@
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\特性\bin\Debug\net8.0\特性.exe
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\特性\bin\Debug\net8.0\特性.deps.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\特性\bin\Debug\net8.0\特性.runtimeconfig.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\特性\bin\Debug\net8.0\特性.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\特性\bin\Debug\net8.0\特性.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\特性\obj\Debug\net8.0\特性.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\特性\obj\Debug\net8.0\特性.AssemblyInfoInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\特性\obj\Debug\net8.0\特性.AssemblyInfo.cs
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\特性\obj\Debug\net8.0\特性.csproj.CoreCompileInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\特性\obj\Debug\net8.0\特性.sourcelink.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\特性\obj\Debug\net8.0\特性.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\特性\obj\Debug\net8.0\refint\特性.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\特性\obj\Debug\net8.0\特性.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\特性\obj\Debug\net8.0\特性.genruntimeconfig.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\特性\obj\Debug\net8.0\ref\特性.dll

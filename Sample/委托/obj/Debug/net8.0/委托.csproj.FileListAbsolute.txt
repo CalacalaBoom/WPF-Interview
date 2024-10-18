@@ -1,0 +1,15 @@
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\委托\bin\Debug\net8.0\委托.exe
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\委托\bin\Debug\net8.0\委托.deps.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\委托\bin\Debug\net8.0\委托.runtimeconfig.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\委托\bin\Debug\net8.0\委托.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\委托\bin\Debug\net8.0\委托.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\委托\obj\Debug\net8.0\委托.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\委托\obj\Debug\net8.0\委托.AssemblyInfoInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\委托\obj\Debug\net8.0\委托.AssemblyInfo.cs
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\委托\obj\Debug\net8.0\委托.csproj.CoreCompileInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\委托\obj\Debug\net8.0\委托.sourcelink.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\委托\obj\Debug\net8.0\委托.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\委托\obj\Debug\net8.0\refint\委托.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\委托\obj\Debug\net8.0\委托.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\委托\obj\Debug\net8.0\委托.genruntimeconfig.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\委托\obj\Debug\net8.0\ref\委托.dll

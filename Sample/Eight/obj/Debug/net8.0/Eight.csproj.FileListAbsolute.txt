@@ -1,0 +1,15 @@
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Eight\bin\Debug\net8.0\Eight.exe
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Eight\bin\Debug\net8.0\Eight.deps.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Eight\bin\Debug\net8.0\Eight.runtimeconfig.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Eight\bin\Debug\net8.0\Eight.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Eight\bin\Debug\net8.0\Eight.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Eight\obj\Debug\net8.0\Eight.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Eight\obj\Debug\net8.0\Eight.AssemblyInfoInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Eight\obj\Debug\net8.0\Eight.AssemblyInfo.cs
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Eight\obj\Debug\net8.0\Eight.csproj.CoreCompileInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Eight\obj\Debug\net8.0\Eight.sourcelink.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Eight\obj\Debug\net8.0\Eight.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Eight\obj\Debug\net8.0\refint\Eight.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Eight\obj\Debug\net8.0\Eight.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Eight\obj\Debug\net8.0\Eight.genruntimeconfig.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Eight\obj\Debug\net8.0\ref\Eight.dll

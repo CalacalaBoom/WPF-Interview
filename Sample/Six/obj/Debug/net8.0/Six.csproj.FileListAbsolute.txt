@@ -1,0 +1,15 @@
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Six\bin\Debug\net8.0\Six.exe
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Six\bin\Debug\net8.0\Six.deps.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Six\bin\Debug\net8.0\Six.runtimeconfig.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Six\bin\Debug\net8.0\Six.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Six\bin\Debug\net8.0\Six.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Six\obj\Debug\net8.0\Six.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Six\obj\Debug\net8.0\Six.AssemblyInfoInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Six\obj\Debug\net8.0\Six.AssemblyInfo.cs
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Six\obj\Debug\net8.0\Six.csproj.CoreCompileInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Six\obj\Debug\net8.0\Six.sourcelink.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Six\obj\Debug\net8.0\Six.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Six\obj\Debug\net8.0\refint\Six.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Six\obj\Debug\net8.0\Six.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Six\obj\Debug\net8.0\Six.genruntimeconfig.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Six\obj\Debug\net8.0\ref\Six.dll

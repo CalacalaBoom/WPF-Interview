@@ -1,0 +1,117 @@
+﻿<Window x:Class="BingdingWPF.LearnTemplate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BingdingWPF"
+        mc:Ignorable="d"
+        Title="LearnTemplate"
+        Height="450"
+        Width="800">
+    <Window.DataContext>
+        <local:LearnTemplateViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate x:Key="one">
+            <Border BorderThickness="2"
+                    BorderBrush="red"
+                    Background="AliceBlue">
+                <StackPanel Orientation="Horizontal"
+                            Name="skp">
+                    <TextBlock Text="{Binding Name}"
+                               Margin="10"></TextBlock>
+                    <TextBlock Text="{Binding Age}"
+                               Margin="10"></TextBlock>
+                    <TextBlock Text="{Binding Sex}"
+                               Margin="10"></TextBlock>
+                </StackPanel>
+            </Border>
+            <DataTemplate.Triggers>
+                <DataTrigger  Value="男"
+                              Binding="{Binding Path=Sex}">
+                    <Setter TargetName="skp"
+                            Property="Background"
+                            Value="CornflowerBlue" />
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+        <DataTemplate x:Key="two">
+            <Border BorderThickness="1"
+                    BorderBrush="Blue"
+                    Background="YellowGreen"
+                    Padding="5">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Name}"
+                               Margin="10"></TextBlock>
+                    <TextBlock Text="{Binding Age}"
+                               Margin="10"></TextBlock>
+                    <TextBlock Text="{Binding Sex}"
+                               Margin="10"></TextBlock>
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+
+        <local:ButtonTemplateSelector x:Key="ButtonTemplateSelector" />
+
+    </Window.Resources>
+    <UniformGrid Columns="5">
+        <Button Content="Click me!">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border BorderThickness="3"
+                            BorderBrush="AliceBlue"
+                            Background="Yellow">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <ListBox x:Name="lb">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"
+                               FontSize="20"
+                               Background="AliceBlue" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Grid>
+            <ListBox Name="listBox"
+                     ItemTemplateSelector="{StaticResource ButtonTemplateSelector}" />
+        </Grid>
+
+        <Button x:Name="MyButton"
+                Content="VisualStateManagerButton"
+                MouseEnter="MyButtonMouseEvent"
+                MouseLeave="MyButtonMouseEvent">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup Name="MouseStates">
+                    <VisualState Name="BlueState">
+                        <Storyboard>
+                            <ColorAnimation To="Blue"
+                                            Storyboard.TargetName="rectBrush"
+                                            Storyboard.TargetProperty="Color" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState Name="OrangeState">
+                        <Storyboard>
+                            <ColorAnimation To="Orange"
+                                            Storyboard.TargetName="rectBrush"
+                                            Storyboard.TargetProperty="Color" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Button.Background>
+                <SolidColorBrush x:Name="rectBrush"
+                                 Color="Orange" />
+            </Button.Background>
+        </Button>
+
+        
+
+    </UniformGrid>
+</Window>

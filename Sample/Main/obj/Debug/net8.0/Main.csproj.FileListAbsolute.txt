@@ -1,0 +1,15 @@
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Main\bin\Debug\net8.0\Main.exe
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Main\bin\Debug\net8.0\Main.deps.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Main\bin\Debug\net8.0\Main.runtimeconfig.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Main\bin\Debug\net8.0\Main.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Main\bin\Debug\net8.0\Main.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Main\obj\Debug\net8.0\Main.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Main\obj\Debug\net8.0\Main.AssemblyInfoInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Main\obj\Debug\net8.0\Main.AssemblyInfo.cs
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Main\obj\Debug\net8.0\Main.csproj.CoreCompileInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Main\obj\Debug\net8.0\Main.sourcelink.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Main\obj\Debug\net8.0\Main.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Main\obj\Debug\net8.0\refint\Main.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Main\obj\Debug\net8.0\Main.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Main\obj\Debug\net8.0\Main.genruntimeconfig.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Main\obj\Debug\net8.0\ref\Main.dll

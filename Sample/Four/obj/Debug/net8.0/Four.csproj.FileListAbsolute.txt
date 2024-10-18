@@ -1,0 +1,15 @@
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Four\bin\Debug\net8.0\Four.exe
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Four\bin\Debug\net8.0\Four.deps.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Four\bin\Debug\net8.0\Four.runtimeconfig.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Four\bin\Debug\net8.0\Four.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Four\bin\Debug\net8.0\Four.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Four\obj\Debug\net8.0\Four.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Four\obj\Debug\net8.0\Four.AssemblyInfoInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Four\obj\Debug\net8.0\Four.AssemblyInfo.cs
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Four\obj\Debug\net8.0\Four.csproj.CoreCompileInputs.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Four\obj\Debug\net8.0\Four.sourcelink.json
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Four\obj\Debug\net8.0\Four.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Four\obj\Debug\net8.0\refint\Four.dll
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Four\obj\Debug\net8.0\Four.pdb
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Four\obj\Debug\net8.0\Four.genruntimeconfig.cache
+C:\Users\HEYii\source\repos\WPF-Interview\Sample\Four\obj\Debug\net8.0\ref\Four.dll
